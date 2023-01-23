@@ -2,6 +2,7 @@ import sys
 import random
 import re
 import getopt
+import string
 from english_words import get_english_words_set
 
 SHORT_USAGE = f"Usage: python project.py [[options] <password_length>]"
@@ -229,13 +230,14 @@ def get_chars(lower=True, upper=True, number=True, spec_chars="all"):
     chars_str : str
         Character string.
     """
+
     chars_str = str()
     if lower:
-        chars_str += "abcdefghijklmnopqrstuvwxyz"
+        chars_str += string.ascii_lowercase
     if upper:
-        chars_str += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        chars_str += string.ascii_uppercase
     if number:
-        chars_str += "0123456789"
+        chars_str += string.digits
     if spec_chars:
         allowed = "!()-.?[]_`~;:@#$%^&*+="
         if spec_chars == "all":
