@@ -1,1 +1,1 @@
-english-words 2.0.0 https://pypi.org/project/english-words/
+english-words
