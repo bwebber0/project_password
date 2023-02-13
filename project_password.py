@@ -3,6 +3,7 @@ import random
 import re
 import getopt
 import string
+
 from english_words import get_english_words_set
 
 SHORT_USAGE = f"Usage: python project.py [[options] <password_length>]"
@@ -20,7 +21,7 @@ USAGE = (
     f"    -f, --force                  Force password to contain at least 1 of each of the selected character types.\n"
          )
 
-VERSION = f"{sys.argv[0]} version 1.0.0"
+__version__ = "0.1.0"
 
 
 def main():

@@ -1,4 +1,4 @@
-from project import (
+from project_password import (
     opts_input,
     get_chars,
     password_strength,
@@ -6,9 +6,12 @@ from project import (
     generate_password,
     contains_words,
 )
+
 import pytest
 
-all_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!()-.?[]_`~;:@#$%^&*+="
+import string
+
+all_chars = string.ascii_letters + string.digits + "!()-.?[]_`~;:@#$%^&*+="
 
 
 def test_opts_input():
@@ -38,6 +41,7 @@ def test_generate_password():
     assert len(generate_password(all_chars, 12)) == 12
     assert generate_password(all_chars, 10)[0] != ("." or "-")
     assert (generate_password("0123456789", 10).isdigit() == True)
+
 
 
 def test_contains_words():
